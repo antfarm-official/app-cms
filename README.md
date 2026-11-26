@@ -1,12 +1,12 @@
-# Aragon App CMS
+# Antfarm App CMS
 
-This repository stores dynamic data consumed by the [Aragon application](https://app.aragon.org).
+This repository stores dynamic data consumed by the [Antfarm application](https://theantfarm.tech).
 It provides up-to-date information such as **featured DAOs** and **sanctioned addresses**.
 
 ## Featured DAOs
 
 The list of featured DAOs is available at:
-[**featured-daos.json**](https://raw.githubusercontent.com/aragon/app-cms/main/featured-daos.json)
+[**featured-daos.json**](https://raw.githubusercontent.com/antfarm-official/app-cms/main/featured-daos.json)
 
 ### Data Structure
 
@@ -17,18 +17,18 @@ Each DAO entry is a JSON object with the following fields:
 | **name**         | ✅       | DAO name                           | —                                                                      |
 | **description**  | ✅       | Brief description of the DAO       | —                                                                      |
 | **logo**         | ✅       | URL to the DAO’s logo image        | —                                                                      |
-| **network**      | ❌       | Network where the DAO is deployed  | Required if the network is supported by the Aragon application         |
-| **networkLabel** | ❌       | Human-readable network name        | Required if the network is **not** supported by the Aragon application |
-| **address**      | ❌       | On-chain DAO contract address      | Required if the DAO is supported by the Aragon application             |
-| **ens**          | ❌       | ENS name of the DAO                | Required if the DAO is supported by the Aragon application             |
-| **overrideUrl**  | ❌       | External link to the DAO’s website | Required if the DAO is **not** supported by the Aragon application     |
+| **network**      | ❌       | Network where the DAO is deployed  | Required if the network is supported by the Antfarm application         |
+| **networkLabel** | ❌       | Human-readable network name        | Required if the network is **not** supported by the Antfarm application |
+| **address**      | ❌       | On-chain DAO contract address      | Required if the DAO is supported by the Antfarm application             |
+| **ens**          | ❌       | ENS name of the DAO                | Required if the DAO is supported by the Antfarm application             |
+| **overrideUrl**  | ❌       | External link to the DAO’s website | Required if the DAO is **not** supported by the Antfarm application     |
 
 ## Sanctioned Addresses
 
 The list of sanctioned addresses is available at:
-[**sanctioned-addresses.json**](https://raw.githubusercontent.com/aragon/app-cms/main/sanctioned-addresses.json)
+[**sanctioned-addresses.json**](https://raw.githubusercontent.com/antfarm-official/app-cms/main/sanctioned-addresses.json)
 
-This list is used to identify blockchain addresses that are restricted from accessing certain features of the Aragon application.
+This list is used to identify blockchain addresses that are restricted from accessing certain features of the Antfarm application.
 The list is derived from the official [OFAC Specially Designated Nationals (SDN) List](https://sanctionslist.ofac.treas.gov/Home/SdnList).
 
 ## DAO Overrides
@@ -36,7 +36,7 @@ The list is derived from the official [OFAC Specially Designated Nationals (SDN)
 DAO overrides allow hiding specific governance plugins for a given DAO without redeploying the application.
 
 The configuration is available at:
-[**dao-overrides.json**](https://raw.githubusercontent.com/aragon/app-cms/main/dao-overrides.json)
+[**dao-overrides.json**](https://raw.githubusercontent.com/antfarm-official/app-cms/main/dao-overrides.json)
 
 ### Data Structure
 
@@ -83,7 +83,7 @@ Recommended schema:
 Feature flags allow controlling feature visibility across different environments without code changes.
 
 The feature flags configuration is available at:
-[**feature-flags.json**](https://github.com/aragon/app-cms/blob/main/feature-flags.json)
+[**feature-flags.json**](https://github.com/antfarm-official/app-cms/blob/main/feature-flags.json)
 
 ### Data Structure
 
@@ -131,7 +131,7 @@ Feature flags can be configured in three formats:
 -   `development` - Development environment
 -   `staging` - Staging environment
 -   `production` - Production environment
--   `occ` - Soft-launch environment (new.app.aragon.org)
+-   `occ` - Soft-launch environment (theantfarm.tech)
 
 `occ` extends `production`: a flag without an `occ` value takes its `production` value, so only the flags that differ need an `occ` entry.
 
@@ -162,15 +162,15 @@ Local override (cookie) > CMS override > Environment-specific (code) > Default (
 2. The flag key must be added to the `FeatureFlagKey` type
 3. Optionally, add the flag to this CMS file to override defaults
 
-For more details, see the [Feature Flags README](https://github.com/aragon/app/blob/main/apps/app/src/shared/featureFlags/README.md) in the application codebase.
+For more details, see the [Feature Flags README](https://github.com/antfarm-official/app/blob/main/apps/app/src/shared/featureFlags/README.md) in the application codebase.
 
 
 ## Spam Tokens
 
 The list of spam tokens is available at:
-[**spam-tokens.json**](https://raw.githubusercontent.com/aragon/app-cms/main/spam-tokens.json)
+[**spam-tokens.json**](https://raw.githubusercontent.com/antfarm-official/app-cms/main/spam-tokens.json)
 
-This list contains token contract addresses that are identified as spam or malicious. The Aragon application uses this list to filter out these tokens from being displayed in DAO treasuries and token lists.
+This list contains token contract addresses that are identified as spam or malicious. The Antfarm application uses this list to filter out these tokens from being displayed in DAO treasuries and token lists.
 
 ### Data Structure
 
